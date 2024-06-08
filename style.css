@@ -1,0 +1,317 @@
+/* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Setting up basic styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(2, 2, 29);
+    color: #fff; /* Default text color */
+    line-height: 1.6;
+    background-image: url('images/backgrounds.jpg'); /* Add your background image here */
+    background-size: cover; /* Makes the image cover the entire page */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Makes the background image fixed on scroll */
+    background-position: center; /* Centers the image */
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header styles */
+.header {
+    color: #fff;
+    padding: 5px 0; /* Increased padding for better spacing */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.8); /* Add a semi-transparent background */
+    backdrop-filter: blur(10px); /* Add blur effect */
+}
+
+.header .logo {
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: rgb(48, 48, 78);
+}
+
+.navbar .active {
+    background-color: #ff0000;
+    color: #000;
+}
+
+/* Hamburger menu for mobile */
+.rock {
+    display: none;
+    cursor: pointer;
+}
+
+.rock i {
+    font-size: 24px;
+    color: #fff;
+}
+
+/* Intro section */
+#intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    padding: 20px 0;
+    background-size: cover; /* Makes the image cover the entire section */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+}
+
+.intro-content {
+    display: flex;
+    align-items: center;
+}
+
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    margin-right: 20px;
+}
+
+#intro h2,
+#intro p {
+    color: #fff; /* Ensure text is white */
+}
+
+/* Portfolio section */
+.portfolio {
+    background: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    color: #000; /* Ensure text is black in portfolio section */
+}
+
+.portfolio h2 {
+    margin-bottom: 20px;
+}
+
+#projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Grid setup */
+    gap: 20px;
+}
+
+.project {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensure children elements don't overflow */
+    transition: transform 0.3s ease; /* Add a hover effect */
+}
+
+.project:hover {
+    transform: translateY(-10px); /* Slightly lift the project card on hover */
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensure image covers the container without distortion */
+}
+
+/* Additional CSS to ensure the cards fully cover their container */
+.project {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-info {
+    padding: 20px;
+    color: #333;
+}
+
+.project-info h3 {
+    margin-bottom: 10px;
+    color: #333333;
+    font-size: 1.2em;
+}
+
+.project-info p {
+    color: #666666;
+}
+
+.gallery-title {
+    text-align: center;
+    margin-bottom: 20px; /* Optional: Add margin to create some space below the title */
+}
+
+/* Footer styles */
+.footer {
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Add a semi-transparent background */
+    backdrop-filter: blur(10px); /* Add blur effect */
+    color: #fff;
+    z-index: 999; /* Ensure the footer stays above other content */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 10px 0;
+        text-align: center;
+        background-color: rgba(2, 2, 29, 0.9);
+        position: absolute;
+        top: 100%; /* Place the navbar below the header */
+        left: 0;
+        transition: top 0.3s ease; /* Add smooth transition effect */
+    }
+
+    .navbar.active {
+        display: flex;
+        top: 80px; /* Adjust the top position to reveal the navbar */
+    }
+
+    .navbar a {
+        margin: 10px 0;
+        color: #fff; /* Change text color */
+    }
+
+    .rock {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.5); /* Add a background color */
+        z-index: 1001;
+        border: none;
+        padding: 10px;
+        border-radius: 50%;
+    }
+
+    .rock i {
+        font-size: 20px; /* Adjust the font size */
+    }
+
+    .header {
+        padding-top: 60px; /* Add space to accommodate the fixed navbar */
+    }
+}
+
+/* Social Media Icons Styles */
+.social-icons {
+    list-style: none; /* Removes default list styling */
+    display: flex; /* Aligns icons in a row */
+    justify-content: center; /* Centers icons horizontally */
+    padding: 20px 0; /* Adds vertical padding */
+}
+
+.social-icons li {
+    margin: 0 10px; /* Space between each icon */
+}
+
+.social-icons a {
+    color: #fff; /* White color for icons to stand out */
+    font-size: 24px; /* Sets the size of the icons */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.social-icons a:hover {
+    color: #ff0000; /* Changes color on hover */
+}
+
+/* Portfolio section adjustments */
+.portfolio {
+    background: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    color: #000; /* Ensure text is black in portfolio section */
+}
+
+#projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid setup */
+    gap: 20px;
+}
+
+.project {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Contains children within the border radius */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.project:hover {
+    transform: translateY(-10px); /* Lifts card on hover */
+}
+
+.project img {
+    width: 100%;
+    height: 150px; /* Consistent height for all images */
+    object-fit: cover; /* Ensures image covers the area without distortion */
+}
+
+.project-info {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay for text */
+    color: white;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth transition for hover effects */
+    transform: translateY(100%); /* Initially hidden */
+    opacity: 0;
+}
+
+.project:hover .project-info {
+    transform: translateY(0); /* Reveals the text on hover */
+    opacity: 1;
+}
+
+.project-info h3 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.project-info p {
+    font-size: 0.9em; /* Slightly smaller text size */
+}
